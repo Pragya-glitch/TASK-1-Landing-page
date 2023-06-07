@@ -1,276 +1,178 @@
-# TASK-1-Landing-page
-creating an landing page using HTML and CSS
-
+index.html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
-    
-<!-- Include this CDN for using icons     -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Landing Page Design Using HTML & CSS</title>
 </head>
-
-
-
 <body>
-    <!-- header section starts  -->
-    
-
-    <header>
-<!--  This will contain the navigation menu -->
-     
-    </header>
-
-    <!-- header section ends -->
-    
-
-    <!-- hero section starts  -->
-<!-- This will contain the brief description about our product (here, restaurant)  -->
-
-<!--  hero section ends -->
-
-
+    <div class="container">
+        <div class="header">
+            <img src="images/logo.png" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Community</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="btn" id="btn1">Log In</button>
+            <button class="btn" id="btn2">Sign Up</button>
+        </div>
+        <div class="content">
+            <div class="text">
+            <h1>Be Young, Have Fun, <br> <span>Drink Pepsi</span></h1>
+            <p>Pepsi is a carbonated soft drink manufactured by PepsiCo. <br>Originally created and developed in 1893 by Caleb Bradham <br>and introduced as Brad's Drink, it was renamed as Pepsi-Cola in 1898, and then shortened to Pepsi in 1961.
+            </p>
+            <button class="btn3">Buy Now</button>
+           </div>
+        <div class="pepsi">
+        <img src="images/pepsi.png" alt="">
+        </div>
+       </div>
+   </div>
 </body>
-
 </html>
-
-2. Adding the Basic CSS
-The below code includes the necessary CSS. We have imported a Google font and created a dark background.
-
- @import url("https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap");
-    * {
-        font-family: "Nunito", sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        border: none;
-        text-decoration: none;
-        text-transform: capitalize;
-        transition: all 0.2s linear;
-    }
-    
-    html {
-        font-size: 62.5%;
-        overflow: hidden;
-    }
-    
-    body {
-        background: #212531;
-        margin: 0;
-    }
-    
-    header {
-        margin: 0px;
-    }
-
-   <!-- header section starts  -->
-
-    <header>
-
-        <section class="nav">
-            <!-- We can also insert any logo here     -->
-
-            <!-- We can also insert any logo here     -->
-            <div class="logo">
-                <a href="#"><i class="fas fa-utensils"></i>food</a>
-            </div>
-
-            <!--  checkbox to control the icon's state    -->
-            <input id="menu-toggle" type="checkbox" />
-            <label class='menu-button-container' for="menu-toggle">
-                <div class='menu-button'></div>
-              </label>
-            <!--  main menu    -->
-            <ul class="menu">
-                 <li><a href="#home">Home</a></li>
-                <li><a href="#speciality">About</a></li>
-                <li> <a href="#popular">Popular</a></li>
-                <li> <a href="#review">Contact</a></li>
-                <li> <a href="#order" class="order">Menu</a></li>
-            </ul>
-        </section>
-
-
-
-
-    </header>
-
-    <!-- header section ends -->
-
-    a {
-        text-decoration: none;
-        color: #000;
-    }
-    
-    ul {
-        list-style: none;
-    }
-    
-/* styling the logo  */
-
-    .logo {
-        font-size: 2.5rem;
-        font-weight: bolder;
-        color: #666;
-        display: inline-block;
-    }
-    
-    .logo i {
-        padding-right: 2rem;
-        color: black;
-    }
-    
-    .order {
-        text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px yellow;
-    }
-
-/* Stying the navbar container */
-    
-    .nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        background: white;
-        color: black;
-        height: 65px;
-        padding: 1em;
-        font-size: 25px;
-    }
-    
-    .menu li:hover {
-        cursor: pointer;
-        transform: scale(1.2);
-    }
-    
-    .menu {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        margin: 0;
-    }
-    
-    .menu>li {
-        margin: 0 1rem;
-        overflow: hidden;
-    }
-    /*Container for menu button  */
-    
-    .menu-button-container {
-        display: none;
-        height: 100%;
-        width: 30px;
-        cursor: pointer;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    #menu-toggle {
-        display: none;
-    }
-    /*  Creating the hamburger menu button  */
-    
-    .menu-button,
-    .menu-button::before,
-    .menu-button::after {
-        display: block;
-        background-color: black;
-        position: absolute;
-        height: 6px;
-        width: 32px;
-        border-radius: 3px;
-        color: white;
-    }
-    
-    .menu-button::before {
-        content: "";
-        margin-top: -8px;
-    }
-    
-    .menu-button::after {
-        content: "";
-        margin-top: 8px;
-    }
-
- /*  Adding Functionality to the Hamburger Menu with CSS  */
-    
-    #menu-toggle:checked+.menu-button-container .menu-button::before {
-        margin-top: 0px;
-        transform: rotate(45deg);
-    }
-    
-    #menu-toggle:checked+.menu-button-container .menu-button {
-        background: rgba(255, 255, 255, 0);
-    }
-    
-    #menu-toggle:checked+.menu-button-container .menu-button::after {
-        margin-top: 0px;
-        /*  transforms the hamburger icon into a cross  */
-        transform: rotate(-45deg);
-    }
-    
- /* media queries  */
-    
-    @media (max-width: 991px) {
-        html {
-            font-size: 55%;
-        }
-        header {
-            padding: 2rem;
-        }
-        section {
-            padding: 2rem;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .menu-button-container {
-            display: flex;
-        }
-        .menu {
-            position: absolute;
-            top: 0;
-            margin-top: 50px;
-            left: 0;
-            flex-direction: column;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem
-        }
-        .menu li:hover {
-            transform: scale(1);
-        }
-        #menu-toggle~.menu li {
-            height: 0;
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-        #menu-toggle:checked~.menu li {
-            border: 1px solid #9f9a9a;
-            height: 2.5em;
-            padding: 0.5em;
-        }
-        .menu>li {
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0.5em 0;
-            width: 100%;
-            color: black;
-            background-color: #e8e8e8;
-        }
-        .menu>li:not(:last-child) {
-            border-bottom: 1px solid #444;
-        }
-    }
+style.css
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(images/bg.png);
+    background-position: center;
+    background-size: cover;
+    padding-right: 3%;
+    padding-left: 5%;
+    box-sizing: border-box;
+    position: relative;
+}
+.header {
+    width: 100%;
+    height: 15vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 80px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+nav {
+    flex: 1;
+    padding-left: 450px;
+}
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+#btn1 {
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #378de5 3%, #48789b 100%);
+    border-radius: 30px;
+    border: 1px solid #5e97d1;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px 20px;
+    margin: 10px;
+    text-decoration: none;
+    box-shadow: 1px 4px 12px rgba(94,28,68,.15);
+    text-shadow: 0px 1px 0px #528ecc;
+}
+#btn2 {
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #cbcbcb 2%, #fff 100%);
+    border-radius: 30px;
+    border: 1px solid #cbcbcb;
+    cursor: pointer;
+    color: #5e97d1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px 20px;
+    margin: 10px;
+    text-decoration: none;
+    box-shadow: 1px 4px 12px rgba(94,28,68,.15);
+    text-shadow: 0px 1px 0px #cbcbcb;
+}
+.btn:hover {
+    box-shadow: 3px 8px 22px rgba(94,28,68,.15);
+    transform: scale(1.1);
+    transition: .2s ease-in-out;
+}
+.content {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.content .text {
+    position: relative;
+    max-width: 600px;
+}
+.content .text h1 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 80px;
+    line-height: 1.5em;
+    letter-spacing: .1em;
+    font-size: 40px;
+    color: #fff;
+}
+.content .text h1 span {
+    font-size: 50px;
+}
+.content .text p {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    margin-top: 40px;
+    color: #e7e3e3;
+ }
+.btn3 {
+    background: linear-gradient(to bottom, #cbcbcb 2%, #fff 100%);
+    margin-top: 60px;
+    margin-left: 140px;
+    padding: 15px 30px;
+    text-align: center;
+    transition: .5s;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    color: #1b1b1b;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 1px 4px 12px rgba(94,28,68,.15);
+}
+.pepsi {
+    display: flex;
+    height: 100%;
+    position: absolute;
+    width: 600px;
+    margin-top: 80px;
+    padding-left: 440px;
+    justify-content: flex-end;
+}
